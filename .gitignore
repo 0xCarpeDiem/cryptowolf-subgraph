@@ -1,0 +1,11 @@
+# Ignore all dotfiles...
+.*
+# Except for
+!.editorconfig
+!.github
+!.gitignore
+# Node
+node_modules
+# Generate
+generated
+build

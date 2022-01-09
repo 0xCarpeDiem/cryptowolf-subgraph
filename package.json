@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "cryptowolf-subgraph",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ 0xCarpeDiem/cryptowolf",
+    "create-local": "graph create --node http://localhost:8020/ 0xCarpeDiem/cryptowolf",
+    "remove-local": "graph remove --node http://localhost:8020/ 0xCarpeDiem/cryptowolf",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 0xCarpeDiem/cryptowolf"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.25.1",
+    "@graphprotocol/graph-ts": "0.24.1",
+    "@protofire/subgraph-toolkit": "^0.1.2"
+  }
+}

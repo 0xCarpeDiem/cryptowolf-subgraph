@@ -1,0 +1,27 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: HuntingNFT
+    network: bsc
+    source:
+      address: "0x7b5f99fbc5c1e5b9e75d41b8e56ecb7caf39e4c4"
+      abi: HuntingNFT
+      startBlock: 14018726
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Hunting
+        - HuntingStats
+      abis:
+        - name: HuntingNFT
+          file: ./abis/HuntingNFT.json
+      eventHandlers:
+        - event: GeneratedResultNFT(indexed uint256)
+          handler: handleGeneratedResultNFT
+        - event: MintedNFT(indexed address,indexed uint256)
+          handler: handleMintedNFT
+      file: ./src/mapping.ts
