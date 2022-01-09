@@ -1,0 +1,19 @@
+type Hunting @entity {
+    id: ID!
+    owner: Bytes!
+    wolfPackId: BigInt!
+    huntingType: BigInt!
+    reward: BigInt!
+    timestamp: BigInt!
+    isGenerated: Boolean!
+}
+
+type HuntingInfo @entity {
+    id: ID!
+    win: BigInt!
+    winPerc: BigDecimal!
+    loss: BigInt!
+    lossPerc: BigDecimal!
+    count: BigInt!
+    totalRewards: BigInt!
+}
